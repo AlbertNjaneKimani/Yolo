@@ -22,13 +22,11 @@ services:
       - "3000:3000"
     networks:
       - ecommerce-network
-    environment:
-      REACT_APP_API_URL: http://localhost:3000/
-
+   
   mongo:
     image: mongo
     ports: 
-      - "27017:27017"  
+      - "9000:9000"  
     networks:
       - ecommerce-network
     volumes:
