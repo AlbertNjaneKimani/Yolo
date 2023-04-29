@@ -1,0 +1,16 @@
+version: '3'
+
+services:  
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"  
+    networks:
+      - ecommerce-network
+    depends_on:
+      - mongo
+    environment:
+      MONGO:URL: mongodb+srv://albert:dLQc2XoBxRCCOwRD@cluster0.zgz8m.mongodb.net/yolomy      
+    
