@@ -13,6 +13,7 @@ services:
       - mongo
     environment:
       MONGO:URL: mongodb+srv://albert:dLQc2XoBxRCCOwRD@cluster0.zgz8m.mongodb.net/yolomy      
+    image: albertokim/backend:1.0
     
   client:
     build:
@@ -22,17 +23,19 @@ services:
       - "3000:3000"
     networks:
       - ecommerce-network
+    image: albertokim/client:1.0
    
   mongo:
-    image: mongo
+    image: mongo:4.4
     ports: 
       - "9000:9000"  
     networks:
       - ecommerce-network
     volumes:
       - mongo-data:/data/db      
+    image: albertokim/mongo:1.0
 
 volumes:
   mongo-data:
 networks:
-  ecommerce-network:   
+  ecommerce-network:

@@ -30,3 +30,4 @@ I choose to use Official Node.js image for backend as base image because applica
  I tested the application by running command: sudo docker-compose up:
  this command built images, started the containers and attached them to bridge network.
  I accessed the application via http://localhost:3000
+ i pushed the image to docker hub using command: docker-compose push
