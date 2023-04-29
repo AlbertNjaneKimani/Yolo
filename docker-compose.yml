@@ -24,4 +24,17 @@ services:
       - ecommerce-network
     environment:
       REACT_APP_API_URL: http://localhost:3000/
-        
+
+  mongo:
+    image: mongo
+    ports: 
+      - "27017:27017"  
+    networks:
+      - ecommerce-network
+    volumes:
+      - mongo-data:/data/db      
+
+volumes:
+  mongo-data:
+networks:
+  ecommerce-network:   
