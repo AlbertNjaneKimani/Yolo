@@ -1,0 +1,15 @@
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: backend-app-service
+      namespace: default
+      labels:
+        run: backend-app-service
+    spec:
+      type: NodePort
+      ports:
+      - name: backend-app-port
+        port: 5000
+        protocol: TCP
+      selector:
+        app: backend-app
