@@ -2,6 +2,7 @@ version: '3'
 
 services:  
   backend:
+    container_name: backend_container
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -16,6 +17,7 @@ services:
     image: backend:1.0
     
   client:
+    container_name: client_container
     build:
       context: ./client
       dockerfile: Dockerfile
